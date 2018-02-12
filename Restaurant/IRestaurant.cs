@@ -2,9 +2,6 @@
 {
     interface IRestaurant
     {
-        void Open()
-        {
-            
-        }
+        void Open();
     }
 }
