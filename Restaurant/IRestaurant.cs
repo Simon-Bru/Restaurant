@@ -4,6 +4,6 @@
     {
         void Open();
 
-        void Welcome();
+        void Welcome(Customer customer);
     }
 }

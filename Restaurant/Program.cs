@@ -44,7 +44,11 @@ namespace Restaurant
             Roger.Name = "Roger";
             Roger.preferences = dish => dish.vegan;
              
-            Console.Write(italian.ToString());
+            fastfood.Welcome(Michel);
+            fastfood.Welcome(Roger);
+            
+            italian.Welcome(Michel);
+            italian.Welcome(Roger);
         }
     }
 }

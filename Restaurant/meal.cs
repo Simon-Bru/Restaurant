@@ -2,8 +2,19 @@
 {
     public struct meal
     {
-        public int Energy { get; set; }
+        private int energy;
+        private int bill;
 
-        public int Bill { get; set; }
+        public int Energy
+        {
+            get => energy;
+            set => energy = value;
+        }
+
+        public int Bill
+        {
+            get => bill;
+            set => bill = value;
+        }
     }
 }

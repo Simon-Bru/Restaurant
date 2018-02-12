@@ -19,9 +19,26 @@ namespace Restaurant
             this.Menu = this.leChef();
         }
 
-        public void Welcome()
+        public void Welcome(Customer customer)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Welcome "+ customer.Name +", take a seat");
+            meal meal = this.placeOrder(customer);
+            Console.WriteLine("Here's your bill: \nCalories: "+meal.Energy+"\nTotal: "+meal.Bill+"$\n\n");
+        }
+
+        private meal placeOrder(Customer customer)
+        {
+            meal customerMeal = new meal();
+            this.Menu.ForEach(dish =>
+            {
+                if (customer.preferences(dish))
+                {
+                    Console.WriteLine("I'm having "+ dish.name);
+                    customerMeal.Bill += dish.price;
+                    customerMeal.Energy += dish.calories;
+                }
+            });
+            return customerMeal;
         }
 
         public override string ToString()
