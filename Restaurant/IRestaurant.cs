@@ -3,5 +3,7 @@
     interface IRestaurant
     {
         void Open();
+
+        void Welcome();
     }
 }

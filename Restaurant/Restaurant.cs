@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
@@ -6,13 +7,9 @@ namespace Restaurant
 {
     public class Restaurant : IRestaurant
     {
-        private List<Dish> menu;
+        private delegate List<Dish> FillMenu();
 
-        public List<Dish> Menu
-        {
-            get => menu;
-            set => menu = value;
-        }
+        private List<Dish> Menu { get; set; }
 
         public void Open()
         {
@@ -24,10 +21,15 @@ namespace Restaurant
             }
         }
 
+        public void Welcome()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString()
         {
             string s = "";
-            foreach (Dish plats in menu)
+            foreach (Dish plats in Menu)
             {
                 s = s + plats.ToString();
                 s = s + "\n";

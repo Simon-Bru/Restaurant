@@ -1,57 +1,29 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.ComTypes;
-
-public enum Course
+﻿public enum Course
 {
-    DESSERT, MAIN , STARTER 
+    DESSERT, 
+    MAIN , 
+    STARTER 
 }
 
 namespace Restaurant
 {
     public class Dish
     {
-        public String name;
-        public Course course;
-        public int calories;
-        public int price;
-        public Boolean vegan;
-
         public Dish() {}
         
-        public string Name
-        {
-            get => name;
-            set => name = value;
-        }
+        public string name { get; set; }
 
-        public Course Course
-        {
-            get => course;
-            set => course = value;
-        }
+        public Course course { get; set; }
 
-        public int Calories
-        {
-            get => calories;
-            set => calories = value;
-        }
+        public int calories { get; set; }
 
-        public int Price
-        {
-            get => price;
-            set => price = value;
-        }
+        public int price { get; set; }
 
-        public bool Vegan
-        {
-            get => vegan;
-            set => vegan = value;
-        }
+        public bool vegan { get; set; }
 
         public override string ToString()
         {
-            return "Name :\t"+this.Name+"\nCourse:\t"+this.Course+"\nPrice:\t"+this.Price+"\nVegan:\t"+this.Vegan+"\nCalories:"+this.Calories+"\n";
+            return "Name :\t"+this.name+"\nCourse:\t"+this.course+"\nPrice:\t"+this.price+"\nVegan:\t"+this.vegan+"\nCalories:"+this.calories+"\n";
         } 
     }
 }
