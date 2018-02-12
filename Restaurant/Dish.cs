@@ -9,40 +9,42 @@ namespace Restaurant
 {
     public class Dish
     {
-        private String m_name;
-        private Course m_course;
-        private int m_calories;
-        private int m_price;
-        private Boolean m_vegan;
+        public String name;
+        public Course course;
+        public int calories;
+        public int price;
+        public Boolean vegan;
 
+        public Dish() {}
+        
         public string Name
         {
-            get => m_name;
-            set => m_name = value;
+            get => name;
+            set => name = value;
         }
 
         public Course Course
         {
-            get => m_course;
-            set => m_course = value;
+            get => course;
+            set => course = value;
         }
 
         public int Calories
         {
-            get => m_calories;
-            set => m_calories = value;
+            get => calories;
+            set => calories = value;
         }
 
         public int Price
         {
-            get => m_price;
-            set => m_price = value;
+            get => price;
+            set => price = value;
         }
 
         public bool Vegan
         {
-            get => m_vegan;
-            set => m_vegan = value;
+            get => vegan;
+            set => vegan = value;
         }
     }
 }

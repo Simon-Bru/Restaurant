@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace Restaurant
 {
     public class Restaurant : IRestaurant
     {
-        private List<Dish> m_menu;
+        private List<Dish> menu;
 
         public List<Dish> Menu
         {
-            get => m_menu;
-            set => m_menu = value;
+            get => menu;
+            set => menu = value;
         }
 
         public void Open()
         {
-            // TODO
-            throw new System.NotImplementedException();
+            XmlSerializer xd = new XmlSerializer(typeof(List<Dish>));
+
+            using (StreamReader rd = new StreamReader("myMenu.xml"))
+            {
+                this.Menu = xd.Deserialize(rd) as List<Dish>; //deserialize
+            }
         }
 
         public override string ToString()
