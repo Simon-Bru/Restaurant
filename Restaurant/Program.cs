@@ -8,7 +8,9 @@ namespace Restaurant
         {
             Restaurant restaurant = new Restaurant();
             restaurant.Open();
-            
+         
+            Console.Write(restaurant.ToString());
         }
+        
     }
 }

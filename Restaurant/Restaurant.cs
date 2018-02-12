@@ -30,6 +30,7 @@ namespace Restaurant
             foreach (Dish plats in menu)
             {
                 s = s + plats.ToString();
+                s = s + "\n";
             }
             return s;
         }
