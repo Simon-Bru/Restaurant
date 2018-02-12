@@ -26,8 +26,8 @@ namespace Restaurant
 
         public override string ToString()
         {
-            String s = "";
-            foreach (Dish plats in m_menu)
+            string s = "";
+            foreach (Dish plats in menu)
             {
                 s = s + plats.ToString();
             }
