@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ComTypes;
 
 public enum Course
 {
@@ -44,5 +46,10 @@ namespace Restaurant
             get => m_vegan;
             set => m_vegan = value;
         }
+
+        public override string ToString()
+        {
+            return "Name :\t"+this.m_name+"\nCourse:\t"+this.m_course+"\nPrice:\t"+this.m_price+"\nVegan:\t"+this.m_vegan+"\nCalories:"+this.m_calories;
+        } 
     }
 }

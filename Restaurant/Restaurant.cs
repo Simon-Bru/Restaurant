@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Restaurant
 {
@@ -21,8 +22,12 @@ namespace Restaurant
 
         public override string ToString()
         {
-            // TODO
-            return base.ToString();
+            String s = "";
+            foreach (Dish plats in m_menu)
+            {
+                s = s + plats.ToString();
+            }
+            return s;
         }
     }
 }
