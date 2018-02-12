@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDish
+>
+  <Dish>
+    <name>Pizza Hawaienne à l'ananas</name>
+    <course>MAIN</course>
+    <calories>500</calories>
+    <price>25</price>
+    <vegan>false</vegan>
+  </Dish>
+  <Dish>
+    <name>Expresso</name>
+    <course>DESSERT</course>
+    <calories>10</calories>
+    <price>2</price>
+    <vegan>true</vegan>
+  </Dish>
+  <Dish>
+    <name>Bruschetta</name>
+    <course>STARTER</course>
+    <calories>150</calories>
+    <price>6</price>
+    <vegan>false</vegan>
+  </Dish>
+  <Dish>
+    <name>Tiramisu</name>
+    <course>DESSERT</course>
+    <calories>200</calories>
+    <price>9</price>
+    <vegan>false</vegan>
+  </Dish>
+  <Dish>
+    <name>Pasta al pomodorro</name>
+    <course>MAIN</course>
+    <calories>100</calories>
+    <price>10</price>
+    <vegan>true</vegan>
+  </Dish>
+</ArrayOfDish>

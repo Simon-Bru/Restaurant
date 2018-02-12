@@ -6,52 +6,45 @@ using System.Xml.Serialization;
 namespace Restaurant
 {
     public delegate List<Dish> fillMenu();
-    
     public delegate bool selectDish(Dish dish);
+    
     class Program
     {
-        private bool PreferencesMichel(Dish dish)
-        {
-            if (dish.vegan == false && dish.price < 10)
-            {
-                return true;
-            }
-            else return false;
-        }
-        private bool PreferencesRoger(Dish dish)
-        {
-            if (dish.vegan == true)
-            {
-                return true;
-            }
-            else return false;
-        }
         static void Main(string[] args)
         {
             
-            Restaurant restaurant = new Restaurant(delegate
+            Restaurant fastfood = new Restaurant(() =>
             {
                 XmlSerializer xd = new XmlSerializer(typeof(List<Dish>));
 
-                using (StreamReader rd = new StreamReader("myMenu.xml"))
+                using (StreamReader rd = new StreamReader("fastfoodMenu.xml"))
                 {
                     return xd.Deserialize(rd) as List<Dish>;
                 }
             });
+            fastfood.Open();
             
-            restaurant.Open();
+            Restaurant italian = new Restaurant(() =>
+            {
+                XmlSerializer xd = new XmlSerializer(typeof(List<Dish>));
+
+                using (StreamReader rd = new StreamReader("italianMenu.xml"))
+                {
+                    return xd.Deserialize(rd) as List<Dish>;
+                }
+            });
+            italian.Open();
+            
+            
             Customer Michel = new Customer();
             Michel.Name = "Michel";
-            Michel.preferences = delegate(Dish dish) {
-                return dish.vegan == false && dish.price < 10; 
-            };
+            Michel.preferences = dish => dish.vegan == false && dish.price < 10;
+            
             Customer Roger = new Customer();
             Roger.Name = "Roger";
-            Roger.preferences = delegate(Dish dish) {
-                return dish.vegan; 
-            };
+            Roger.preferences = dish => dish.vegan;
              
-            Console.Write(restaurant.ToString());
+            Console.Write(italian.ToString());
         }
     }
 }
