@@ -1,24 +1,22 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
 
 namespace Restaurant
-{
+{    
     public class Restaurant : IRestaurant
     {
-        private delegate List<Dish> FillMenu();
+        private fillMenu leChef;
 
         private List<Dish> Menu { get; set; }
 
+        public Restaurant(fillMenu chef)
+        {
+            this.leChef = chef;
+        }
+
         public void Open()
         {
-            XmlSerializer xd = new XmlSerializer(typeof(List<Dish>));
-
-            using (StreamReader rd = new StreamReader("myMenu.xml"))
-            {
-                this.Menu = xd.Deserialize(rd) as List<Dish>; //deserialize
-            }
+            this.Menu = this.leChef();
         }
 
         public void Welcome()
