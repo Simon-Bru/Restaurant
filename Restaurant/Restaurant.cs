@@ -9,6 +9,12 @@ namespace Restaurant
 
         private List<Dish> Menu { get; set; }
 
+        public fillMenu LeChef
+        {
+            get => leChef;
+            set => leChef = value;
+        }
+
         public Restaurant(fillMenu chef)
         {
             this.leChef = chef;

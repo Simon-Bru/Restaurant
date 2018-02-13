@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -10,9 +9,16 @@ namespace Restaurant
     
     class Program
     {
+
+
         static void Main(string[] args)
         {
-            
+            Program p = new Program();
+            p.work();
+        }
+
+        void work()
+        {
             Restaurant fastfood = new Restaurant(() =>
             {
                 XmlSerializer xd = new XmlSerializer(typeof(List<Dish>));
